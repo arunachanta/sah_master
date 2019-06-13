@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" 
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="sah" transaction-type="RESOURCE_LOCAL">
+	 <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+ 		<!-- List all classes to be exposed as Entities here. Due to the usage of Spring Boot JAR deployment and Eclipselink, it is not possible to have them scanned for. -->
+ 		<!-- <class>com.sah.models.Person</class> -->
+ 		<!-- <class>sap.sah2.entities.Demographics</class> -->
+ 		<class>sap.sah2.entities.CurrentContentPerStudent</class>
+ 		<class>sap.sah2.entities.CategoryDetails</class>
+ 		<class>sap.sah2.entities.Demographics</class>
+ 		<class>sap.sah2.entities.Demo_Enr</class>	
+		<properties>		
+			<property name="javax.persistence.jdbc.driver" value="org.h2.Driver" />
+      		<property name="javax.persistence.jdbc.url" value="jdbc:h2:mem:GroupBuilder" />
+      		<property name="javax.persistence.jdbc.user" value="sa" />
+      		<property name="javax.persistence.jdbc.password" value="" />
+      		<!-- <property name="javax.persistence.jdbc.url" value="jdbc:sap://lddbbtx:30215/?currentschema=24ACDD9460F142A880755CDA89EF2D3D"/>
+			<property name="javax.persistence.jdbc.driver" value="com.sap.db.jdbc.Driver" />
+			<property name="javax.persistence.jdbc.user" value="SBSS_70371246305407095496558328805442450080528745605673575861040495772" />
+			<property name="javax.persistence.jdbc.password" value="Ms1quKyCNeYBOnCqDEAQe9REjhstMBQpg.hrZk-CqOgf8w42-w34SA3UYkDv-Dwjoq.1r_pgHvAJ8dCcBGOhNaxnj0wiiXW0P4ipGHsQKQ9kyLJe3M4qnTiqUTNkWOEK" /> -->
+			<property name="eclipselink.ddl-generation" value="create-or-extend-tables" />
+			<property name="eclipselink.ddl-generation.output-mode" value="both" />
+			<property name="eclipselink.weaving" value="static"/>
+			<property name="eclipselink.logging.level" value="FINE" />
+			<property name="eclipselink.jpql.parser" value="org.eclipse.persistence.queries.ANTLRQueryBuilder" />
+			<property name="eclipselink.weaving" value="static"/>
+			<!-- <property name="eclipselink.target-database" value="org.eclipse.persistence.platform.database.HANAPlatform" /> -->
+		</properties>
+	</persistence-unit>
+</persistence>

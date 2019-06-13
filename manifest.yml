@@ -1,0 +1,17 @@
+applications:
+- name: SAH_Sakshi_Spring
+  host: SAH_Sakshi_Spring
+  memory: 512MB
+  instances: 1
+  path: target/SAH_Sakshi_Spring.jar
+  buildpack: sap_java_buildpack
+  services:
+    -   KARE-3783g0h4dvn0hn7r-SAH_XSA-hdi_db
+  env:
+    SPRING_PROFILES_ACTIVE: SAHCloud
+    TARGET_RUNTIME: tomcat
+
+  
+ 
+
+  
